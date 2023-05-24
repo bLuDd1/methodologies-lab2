@@ -25,6 +25,7 @@ class List {
         for (let i = 0; i < this.array.length; i++) {
             if (this.array[i] === element) {
                 this.array.splice(i, 1);
+                i--;
             }
         }
     }
