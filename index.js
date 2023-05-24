@@ -158,6 +158,7 @@ class List {
         temp = this.head;
         this.head = this.tail;
         this.tail = temp;
+        return this;
     }
 
     findFirst(element) {
@@ -186,6 +187,7 @@ class List {
         this.head = null;
         this.tail = null;
         this.lengthList = 0;
+        return this;
     }
 
     extend(elements) {

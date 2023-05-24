@@ -4,44 +4,42 @@ const { List } = require('./index.js');
 
 const list = new List();
 
-list.append(1)
-console.log(list.array); // [ 1 ]
+list.append('a');
+console.log(list); // [ 'a' ]
 
-list.insert(2, 0);
-list.insert(5, 1);
-console.log(list.array); // [ 2, 5, 1 ]
+list.insert('b', 0);
+list.insert('c', 1);
+console.log(list); // [ 'b', 'c', 'a' ]
 
 console.log(list.length()); // 3
 
-console.log(list.reverse()); // [ 1, 5, 3 ]
+console.log(list.reverse()); // [ 'a', 'c', 'b' ]
 
-list.insert(5, 3);
-console.log(list.array); // [ 1, 5, 2, 5 ]
+list.insert('c', 3);
+console.log(list); // [ 'a', 'c', 'b', 'c' ]
 
-console.log(list.findFirst(5)); // 1
+console.log(list.findFirst('c')); // 1
 
-console.log(list.findLast(5)); // 3
+console.log(list.findLast('c')); // 3
 
 const clone = list.clone();
-console.log(clone.array); // [ 1, 5, 2, 5 ]
+console.log(clone); // [ 'a', 'c', 'b', 'c' ]
 
 console.log(clone.clear()); // []
 
 list.delete(0);
-console.log(list.array); // [ 5, 2, 5 ]
+console.log(list); // [ 'c', 'b', 'c' ]
 
-list.deleteAll(5);
-console.log(list.array); // [ 2 ]
+list.deleteAll('c');
+console.log(list); // [ 'b' ]
 
-list.append(7);
-list.append(7);
-list.append(7);
-console.log(list.array); // [ 2, 7, 7, 7 ]
+list.append('d');
+list.append('d');
+list.append('d');
+console.log(list); // [ 'b', 'd', 'd', 'd' ]
 
-console.log(list.get(0)); // 2
+console.log(list.get(0)); // b
 
-console.log(list.array); // [ 2, 7, 7, 7 ]
-
-clone.append(3);
+clone.append('e');
 list.extend(clone);
-console.log(list.array); // [ 2, 7, 7, 7, 3 ]
+console.log(list); // [ 'b', 'd', 'd', 'd', 'e' ]
