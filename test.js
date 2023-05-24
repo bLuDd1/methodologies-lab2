@@ -76,7 +76,7 @@ describe('Test deleteAll method', () => {
     test('Delete all elements with same value in list', () => {
         expect(list.length()).toBe(3);
         list.deleteAll('a');
-        expect(list.length()).toBe(1);
+        expect(list.length()).toBe(0);
     });
 
     test('Delete all elements with same value in list with different values', () => {
